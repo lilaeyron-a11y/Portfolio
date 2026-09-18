@@ -28,6 +28,12 @@ app.get('/api/projects', async (req, res) => {
 app.post('/api/projects', async (req, res) => {
   const { name, type } = req.body;
 
+  if (!name || !type) {
+    return res.status(400).json({
+      error: 'name and type are required'
+    });
+  }
+
   const result = await pool.query(
     'INSERT INTO projects (name, type) VALUES ($1, $2) RETURNING *',
     [name, type]
