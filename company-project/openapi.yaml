@@ -1,0 +1,46 @@
+openapi: 3.0.0
+
+info:
+  title: Asset Labels API
+  version: 1.0.0
+  description: API for managing labels.
+
+paths:
+  /api/v1/labels:
+    get:
+      summary: Get labels
+      responses:
+        "200":
+          description: Successful response
+
+    post:
+      summary: Create label
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                color:
+                  type: string
+
+      responses:
+        "200":
+          description: Label created
+
+  /api/v1/labels/{id}:
+    delete:
+      summary: Delete label
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+
+      responses:
+        "204":
+          description: Label deleted

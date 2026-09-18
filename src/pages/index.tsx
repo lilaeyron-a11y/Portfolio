@@ -1,112 +1,20 @@
-import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
-
 import styles from "./index.module.css";
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-
-  return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/work">
-            View My Work
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export default function Home(): ReactNode {
-  const [projects, setProjects] = useState<any[]>([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/api/projects")
-      .then((response) => response.json())
-      .then((data) => setProjects(data));
-  }, []);
-
-  const testBackend = async () => {
-    const response = await fetch("http://localhost:3001/api/hello");
-    const data = await response.json();
-
-    console.log(data);
-  };
-
+export default function Home() {
   return (
     <Layout
       title="Finn — Technical Writer"
-      description="Description will go into a meta tag in <head />"
+      description="Finn is a technical writer creating clear, useful documentation."
     >
-      <HomepageHeader />
-
       <main>
-        <button onClick={testBackend}>Test Backend</button>
-
-        <div className="container">
-          <h2>Projects</h2>
-
-          {projects.map((project) => (
-            <div key={project.id}>
-              <h3>{project.name}</h3>
-              <p>{project.type}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="container">
-          <section className={styles.section}>
-            <h2>About My Work</h2>
-            <p>
-              I create clear, structured, and user-focused technical
-              documentation that helps people understand products, APIs, and
-              technical systems.
-            </p>
-          </section>
-
-          <section className={styles.section}>
-            <h2>Selected Work</h2>
-
-            <div className={styles.workGrid}>
-              <div className={styles.workCard}>
-                <h3>Product Documentation</h3>
-                <p>
-                  User manuals, quick installation guides, datasheets, and
-                  product documentation.
-                </p>
-              </div>
-
-              <div className={styles.workCard}>
-                <h3>Developer Documentation</h3>
-                <p>
-                  API documentation, technical references, and documentation
-                  for developers.
-                </p>
-              </div>
-
-              <div className={styles.workCard}>
-                <h3>Documentation Systems</h3>
-                <p>
-                  Knowledge bases, documentation websites, and modern
-                  docs-as-code workflows.
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
+        <section className={styles.hero}><div className={styles.eyebrow}>Technical writing · Documentation systems</div><h1>I make complex products easier to use.</h1><p className={styles.intro}>I create clear, structured documentation for people who need to understand technical products and APIs.</p><Link className={styles.textLink} to="/work">View selected work <span aria-hidden="true">↗</span></Link></section>
+        <section className={styles.featured} aria-labelledby="featured-work"><div id="featured-work" className={styles.sectionLabel}>Selected work</div><div className={styles.projectList}>
+          <article className={styles.project}><div><p className={styles.projectType}>API documentation · Docs as code</p><h2>AtlasCloud Asset Labels API</h2></div><p>Documentation for a simulated asset-management API, built through implementation review, API testing, OpenAPI refinement, and an editorial workflow.</p><Link to="/work" className={styles.projectLink}>View project <span aria-hidden="true">→</span></Link></article>
+          <article className={styles.project}><div><p className={styles.projectType}>Product documentation</p><h2>Technical product guides</h2></div><p>Practical, task-focused content that helps users set up, understand, and work confidently with technical products.</p><Link to="/work" className={styles.projectLink}>Explore work <span aria-hidden="true">→</span></Link></article>
+        </div></section>
+        <section className={styles.statement}><p>Good documentation respects a reader’s time: it is accurate, intentional, and easy to navigate.</p><Link className={styles.textLink} to="/about">More about my approach <span aria-hidden="true">↗</span></Link></section>
       </main>
     </Layout>
   );

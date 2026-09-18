@@ -33,7 +33,7 @@ app.post('/api/projects', async (req, res) => {
     [name, type]
   );
 
-  res.json(result.rows[0]);
+  res.json(result.rows[0]);s
 });
 
 app.listen(PORT, () => {

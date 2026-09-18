@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Hello',
-  tagline: 'Welcome to the Technical Writing World',
+  title: 'Finn',
+  tagline: 'Technical writer for clear, useful products.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://lilaeyron-a11y.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/Portfolio/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'lilaeyron-a11y', // Usually your GitHub org/user name.
+  projectName: 'Portfolio', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -52,14 +52,11 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'light',
+      disableSwitch: true,
     },
     navbar: {
       title: 'Finn',
-      logo: {
-        alt: 'Finn Logo',
-        src: 'img/logo.svg',
-      },
       items: [
   {to: '/', label: 'Home', position: 'left'},
   {to: '/work', label: 'Work', position: 'left'},
@@ -67,11 +64,11 @@ const config: Config = {
   {to: '/about', label: 'About', position: 'left'},
 ],
     },
-footer: {
-  style: 'dark',
-  links: [],
-  copyright: `Copyright © ${new Date().getFullYear()} Finn.`,
-},
+    footer: {
+      style: 'light',
+      links: [],
+      copyright: `© ${new Date().getFullYear()} Finn. Technical writer.`,
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

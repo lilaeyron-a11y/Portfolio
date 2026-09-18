@@ -1,61 +1,6 @@
-import Layout from "@theme/Layout";
-import styles from "./index.module.css";
+import Layout from '@theme/Layout';
+import './portfolio-page.css';
 
 export default function Work() {
-  return (
-    <Layout title="Work">
-      <main>
-        <div className="container">
-          <h1>Work</h1>
-          <p>A selection of technical writing and documentation projects.</p>
-
-          <section className={styles.section}>
-            <h2>Product Documentation</h2>
-            <div className={styles.workCard}>
-              <h3>Product Documentation</h3>
-              <p>
-                Product datasheets, quick installation guides, and user
-                documentation developed for technical products.
-              </p>
-              <p>
-                <strong>Focus:</strong> Information architecture, technical
-                writing, document design, and publishing.
-              </p>
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <h2>Developer Documentation</h2>
-
-            <div className={styles.workCard}>
-              <h3>Developer Documentation</h3>
-              <p>
-                API documentation, technical references, and documentation
-                designed for developers.
-              </p>
-              <p>
-                <strong>Focus:</strong> API structure, technical accuracy,
-                developer experience, and information organization.
-              </p>
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <h2>Documentation Systems</h2>
-            <div className={styles.workCard}>
-              <h3>Documentation Systems</h3>
-              <p>
-                Knowledge bases, documentation websites, and modern
-                documentation workflows.
-              </p>
-              <p>
-                <strong>Focus:</strong> Docusaurus, Markdown, Git, Docs-as-Code,
-                information architecture, and documentation workflows.
-              </p>
-            </div>
-          </section>
-        </div>
-      </main>
-    </Layout>
-  );
+  return <Layout title="Work"><main className="portfolioPage"><div className="portfolioPage__intro"><p className="portfolioPage__eyebrow">Work</p><h1>Selected documentation projects.</h1><p className="portfolioPage__lead">A growing collection of work across product documentation, developer documentation, and documentation systems.</p></div><div className="portfolioPage__body portfolioPage__projects"><article><p className="portfolioPage__eyebrow">API documentation · In progress</p><h2>AtlasCloud Asset Labels API</h2><p>A realistic documentation-engineering project covering implementation review, API testing, Markdown documentation, OpenAPI, Swagger UI, version control, and CI.</p><p><strong>Focus:</strong> Technical accuracy, developer experience, and docs-as-code workflow.</p></article><article><p className="portfolioPage__eyebrow">Product documentation</p><h2>Product guides</h2><p>User-centered guides and product content designed to answer real questions at the moment they arise.</p><p><strong>Focus:</strong> Information architecture, task-based writing, and publishing.</p></article><article><p className="portfolioPage__eyebrow">Documentation systems</p><h2>Documentation websites</h2><p>Content systems that bring documentation, structure, and maintainable publishing workflows together.</p><p><strong>Focus:</strong> Docusaurus, Markdown, Git, and sustainable documentation practices.</p></article></div></main></Layout>;
 }
